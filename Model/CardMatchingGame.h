@@ -23,6 +23,5 @@
 
 @property (nonatomic, readonly) NSString *resultMsg;
 
-@property (nonatomic, getter = isThreeCardMatchMode) BOOL threeCardMatchMode;
 
 @end

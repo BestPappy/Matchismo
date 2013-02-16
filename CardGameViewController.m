@@ -18,7 +18,6 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *msgLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *gamePlayModeSwitch;
 
 @end
 
@@ -80,23 +79,14 @@
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
-    self.gamePlayModeSwitch.enabled = NO;
-    self.gamePlayModeSwitch.alpha = 0.5;
 }
 - (IBAction)deal:(UIButton *)sender {
     self.game = nil;
     self.flipCount = 0;
     [self updateUI];
     self.msgLabel.text = @"New game. Tap a card to flip it!";
-    // self.gamePlayModeSwitch.on = NO;
-    [self.gamePlayModeSwitch setOn:NO animated:YES];
-    self.gamePlayModeSwitch.enabled = YES;
-    self.gamePlayModeSwitch.alpha = 1;
 }
 
-- (IBAction)gamePlayModeChanged:(UISwitch *)sender {
-    self.game.threeCardMatchMode = sender.on;
-}
 
 
 
