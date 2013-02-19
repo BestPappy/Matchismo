@@ -8,6 +8,12 @@
 
 #import "SetCard.h"
 
+//@interface Card()
+//@property (nonatomic, readwrite) BOOL matchWasTested;
+//@property (strong, nonatomic, readwrite) NSMutableArray *otherCardsTested;
+//@end
+
+
 @implementation SetCard
 
 // ------ Class methods ----------------------------------------------------
@@ -47,6 +53,8 @@
     // match logic based on set game description found here: http://en.wikipedia.org/wiki/Set_(game)#Games
     int matchScore = 0; // 0 will mean "not a valid set", 1 will mean "is a valid set"
     
+//    self.matchWasTested=NO;
+    
     if (otherCards.count == 2) { // if we're not comparing ourselves to exactly 2 other cards then cannot be a set
     
         int numberMatches = 0;
@@ -74,13 +82,20 @@
            They all have the same shading, or they have three different shadings.
            They all have the same color, or they have three different colors.
         */
+        
         if ((numberMatches == 0 || numberMatches == 2)
-                && (shadingMatches == 0 || shadingMatches == 2)
-                && (colorMatches == 0 || colorMatches == 2)
-                && (symbolMatches == 0 || colorMatches == 2)) {
+         && (shadingMatches == 0 || shadingMatches == 2)
+         && (colorMatches == 0 || colorMatches == 2)
+         && (symbolMatches == 0 || symbolMatches == 2)) {
             matchScore = 1;
         }
-        
+
+        //NSLog(@"NbrMatches: %d, ShadeMatches: %d, ColorMatches: %d, SymbolMatches: %d, matchScore: %d",numberMatches,shadingMatches,colorMatches,symbolMatches, matchScore);
+
+//        self.matchWasTested=YES;
+//        [self.otherCardsTested addObjectsFromArray:otherCards];
+//        [self.otherCardsTested addObject:self];
+
     }
     
     return matchScore;

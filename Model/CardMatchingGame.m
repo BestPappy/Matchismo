@@ -8,47 +8,13 @@
 
 #import "CardMatchingGame.h"
 
-@interface CardMatchingGame()
-@property (strong, nonatomic) NSMutableArray *cards;
-@property (nonatomic) int score;
-@property (nonatomic) NSString *resultMsg;
-@end
-
 @implementation CardMatchingGame
-- (NSMutableArray *) cards {
-    if (!_cards) _cards = [[NSMutableArray alloc] init];
-    return _cards;
-}
-
-- (id)initWithCardCount:(NSUInteger)count
-              usingDeck:(Deck *)deck {
-    self = [super init];
-    
-    if (self) {
-        for (int i = 0; i < count; i++) {
-            Card *card = [deck drawRandomCard];
-            if (!card) {
-                self = nil;
-                break;
-            } else {
-                self.cards[i] = card;
-            }
-        }
-        
-    }
-    
-    return self;
-}
-
-- (Card *)cardAtIndex:(NSUInteger)index {
-    return (index < self.cards.count) ? self.cards[index] : nil;
-}
-
 
 #define FLIP_COST 1
 #define MATCH_BONUS 4
 #define MISMATCH_PENALTY 2
 
+// override the trivial version of the method contained in CardGame
 - (void)flipCardAtIndex:(NSUInteger)index {
     
     Card *card = [self cardAtIndex:index];

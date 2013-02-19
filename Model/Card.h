@@ -16,6 +16,10 @@
 
 @property (nonatomic, getter=isUnplayable) BOOL unplayable;
 
+//@property (nonatomic, readonly) BOOL matchWasTested;
+
+//@property (strong, nonatomic, readonly) NSMutableArray *otherCardsTested;
+
 - (int)match:(NSArray *)otherCards;
 
 @end
