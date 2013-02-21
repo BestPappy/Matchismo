@@ -26,7 +26,7 @@
 
 - (UIImage *) cardBackImage {
     if (!_cardBackImage) {
-        _cardBackImage = [[UIImage alloc] initWithContentsOfFile:@"/Users/Pappy/Developer/Matchismo/Matchismo/CardBack.jpg"];
+        _cardBackImage = [UIImage imageNamed:@"CardBack.jpg"];
     }
     return _cardBackImage;
 }
