@@ -14,7 +14,7 @@
 #define MATCH_BONUS 4
 #define MISMATCH_PENALTY 2
 
-// override the trivial version of the method contained in CardGame
+// override the trivial version of the method contained in CardGame...
 - (void)flipCardAtIndex:(NSUInteger)index {
     
     Card *card = [self cardAtIndex:index];
