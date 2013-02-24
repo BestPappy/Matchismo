@@ -326,7 +326,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Match" id="LPB-7S-qYY"/>
+                    <tabBarItem key="tabBarItem" title="Match" image="match.png" id="LPB-7S-qYY"/>
                     <connections>
                         <outlet property="flipsLabel" destination="Ive-7s-ZeU" id="ty9-jg-cg2"/>
                         <outlet property="msgLabel" destination="2c5-F5-Q84" id="0YP-qw-NfQ"/>
@@ -781,7 +781,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Set" id="UeJ-Ma-gQp"/>
+                    <tabBarItem key="tabBarItem" title="Set" image="set.png" id="UeJ-Ma-gQp"/>
                     <connections>
                         <outlet property="flipsLabel" destination="TXu-bc-Y6n" id="8rf-XZ-yVe"/>
                         <outlet property="resultLabel" destination="AvV-Ub-l1e" id="XsJ-n2-a8M"/>
@@ -819,11 +819,15 @@
     </scenes>
     <resources>
         <image name="CardBack.jpg" width="172" height="240"/>
+        <image name="match.png" width="30" height="30"/>
+        <image name="set.png" width="30" height="30"/>
     </resources>
     <classes>
         <class className="CardGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="deal:" candidateClass="UIButton"/>
+                <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="msgLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
